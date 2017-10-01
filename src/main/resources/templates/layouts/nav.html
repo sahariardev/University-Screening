@@ -1,0 +1,84 @@
+<div th:fragment="nav">
+
+	<div class="rf-search">
+
+		<form method="get">
+
+			<div class="ui action input">
+				<input placeholder="Search..." type="text" />
+				<div type="submit" class="ui button">Search</div>
+			</div>
+			<div>
+				<div class="topmar-10">Division</div>
+				<select class="ui compact selection dropdown">
+					<option value="all">All</option>
+					<option selected="" value="articles">Dhaka</option>
+					<option value="products">Chittagonj</option>
+				</select>
+
+				<div class="topmar-10">Curriculam</div>
+				<select class="ui compact selection dropdown">
+					<option value="all">All</option>
+					<option selected="" value="articles">CSE</option>
+					<option value="products">EEE</option>
+				</select>
+
+				<div class="range-slider-container">
+					<label for="amount">Taka per credit : <span id="low-cr"></span>
+						BDT To <span id="high-cr"></span>BDT
+					</label> <input type="hidden" name="pricerange" id="pricerange" value="" />
+					<div id="slider-range" style="height: 10px;"></div>
+				</div>
+			</div>
+
+
+		</form>
+		<div class="hide-search botmar-10">
+			<i>Hide Search Option</i>
+		</div>
+		<script>
+          
+          $( function() {
+            $( "#slider-range" ).slider({
+              orientation: "horizontal",
+              range: true,
+              min:1000,
+              max:10000,
+              values: [ 1500, 8000 ],
+              slide: function( event, ui ) {
+                $("#low-cr").html(ui.values[ 0 ]);
+                $("#high-cr").html(ui.values[ 1 ]);
+                $("#pricerange").val(ui.values[ 0 ]+"BBQQ"+ui.values[ 1 ]);
+               
+              }
+            });
+            
+            $("#low-cr").html($( "#slider-range" ).slider( "values", 0 ));
+            $("#high-cr").html($( "#slider-range" ).slider( "values", 1 ));
+           $("#pricerange").val($( "#slider-range" ).slider( "values", 0 )+"BBQQ"+$("#slider-range" ).slider( "values", 1 ));
+           
+          
+          });
+         
+          </script>
+
+	</div>
+
+	<div class="rf-nav">
+
+		<div class="row">
+			<div class="col-sm-4  tleft">
+				<div class="">
+					<span class="menu-call-btn"><i class="list layout icon"></i>Menu</span>
+					<span class="search-btn"><i class="search icon show-search"></i></span>
+				</div>
+			</div>
+			<div class="col-sm-4 ">
+				<div class="title">University Screening</div>
+			</div>
+			<div class="col-sm-4  tright">Login/Register</div>
+		</div>
+	</div>
+
+
+</div>

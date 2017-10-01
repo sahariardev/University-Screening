@@ -1,0 +1,103 @@
+@import
+	url('https://fonts.googleapis.com/css?family=Lobster|Lobster+Two|Poiret+One')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css?family=Josefin+Slab:600i,700');
+
+body {
+	background-color: #f4f7f6;
+	font-family: 'Josefin Slab', serif;
+}
+
+h1, h2, h3, h4, h5, h6, div, p, span {
+	font-family: 'Lobster Two', cursive;
+	font-family: 'Lobster', cursive;
+	font-family: 'Poiret One', cursive;
+	font-family: 'Josefin Slab', serif;
+}
+
+h2 {
+	color: #ff6923;
+}
+
+.rf-nav {
+	text-align: center;
+	padding: 20px;
+	font-size: 20px;
+	border: 1px solid #e6e6e6;
+
+}
+.title
+{
+	font-family: 'Lobster', cursive;
+	color: #ff6923;
+}
+.tleft
+{
+	text-align:left;
+}
+.tright
+{
+	text-align:right;
+}
+.menu-call-btn
+{
+	font-family: 'Lobster', cursive;
+	border-right: 1px solid #e6e6e6;
+}
+.menu-call-btn:hover
+{
+	color: #ff6923;
+	cursor:pointer;
+}
+.search-btn
+{
+	margin-left:30px;
+}
+.search-btn:hover
+{
+	cursor:pointer;
+	color: #ff6923;
+}
+.rf-search
+{
+	display:none;
+	text-align:center;
+	max-width:520px;
+	margin:auto;
+	margin-top:20px;
+}
+.topmar-5
+{
+	margin-top:5px;
+}
+.topmar-10
+{
+	margin-top:10px;
+}
+.topmar-20
+{
+	margin-top:20px;
+}
+.botmar-10
+{
+	margin-bottom:10px;
+}
+.range-slider-container
+{
+	max-width:300px;
+	margin:auto;
+	margin-top:10px;
+	margin-bottom:20px;
+}
+.hide-search
+{
+	color:#8879c4;
+	cursor:pointer;
+	text-decoration:underline;
+}
+body.pushable > .pusher
+{
+	background-color: #f4f7f6;
+}

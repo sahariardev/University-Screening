@@ -1,0 +1,22 @@
+<html>
+	<head th:replace="layouts/header::header"></head>
+
+<body>
+
+  <div th:replace="layouts/menu::menu">Menu Didnt Load</div>
+	<div class="pusher">
+		<div th:replace="layouts/nav::nav"></div>
+
+
+            <section layout:fragment="content">
+               <p>This is a paragraph from the content page</p>
+          </section>
+
+		<div th:replace="layouts/footer::footer"></div>
+	</div>
+
+</body>
+
+
+	
+</html>
