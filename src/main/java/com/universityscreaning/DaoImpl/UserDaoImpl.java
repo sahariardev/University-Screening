@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.universityscreaning.Dao.UserDao;
+import com.universityscreaning.ResultSetExtractors.UserResultSetExtractor;
 import com.universityscreaning.RowMappers.UserRowMapper;
 import com.universityscreaning.model.User;
 
@@ -54,8 +55,11 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public User getUser(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		String sql="Select * from user where id ="+id;
+		User usr=jdbctemplate.query(sql, new UserResultSetExtractor());
+		return usr;
+		
 	}
 
 	@Override

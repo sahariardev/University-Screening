@@ -24,6 +24,8 @@ public class UniversityDaoImpl implements UniversityDao {
 	@Autowired
 	private ReviewDaoImpl reviewsConn;
 	
+	
+	
 
 	@Override
 	public University getUniversity(int id) {
@@ -40,8 +42,10 @@ public class UniversityDaoImpl implements UniversityDao {
 
 
 	@Override
-	public void createUniversity(University university) {
-		// TODO Auto-generated method stub
+	public void createUniversity(University uni) {
+		String sql="insert into universities (name,address,body,creditfee,Divison) values('"+uni.getName()+"','"+uni.getAddress()+"','"+uni.getBody()+"',"+uni.getFee()+",'"+uni.getDivision()+"');";
+		System.out.println(sql);
+		jdbc.update(sql);
 
 	}
 

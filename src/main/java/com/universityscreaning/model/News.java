@@ -4,6 +4,14 @@ public class News {
 	
 	private int id;
 	private int uni_id;
+	private String title;
+	
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 	private String text;
 	public int getId() {
 		return id;
@@ -25,8 +33,9 @@ public class News {
 	}
 	@Override
 	public String toString() {
-		return "News [id=" + id + ", uni_id=" + uni_id + ", text=" + text + "]";
+		return "News [id=" + id + ", uni_id=" + uni_id + ", title=" + title + ", text=" + text + "]";
 	}
+	
 	
 	
 

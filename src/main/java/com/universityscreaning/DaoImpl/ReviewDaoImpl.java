@@ -1,5 +1,6 @@
 package com.universityscreaning.DaoImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,12 +10,15 @@ import org.springframework.stereotype.Repository;
 import com.universityscreaning.Dao.ReviewDao;
 import com.universityscreaning.RowMappers.ReviewRowMapper;
 import com.universityscreaning.model.Review;
+import com.universityscreaning.model.User;
 
 @Repository
 public class ReviewDaoImpl implements ReviewDao {
 
 	@Autowired
 	JdbcTemplate jdbc;
+	@Autowired
+	UserDaoImpl user_jdbc;
 	@Override
 	public void addReview(Review r) {
 		// TODO Auto-generated method stub
@@ -46,8 +50,17 @@ public class ReviewDaoImpl implements ReviewDao {
 	@Override
 	public List<Review> getOneUniversityReviews(int uni_id) {
 		String sql="Select * from reviews where uni_id = "+uni_id;
-		System.out.println(sql);
-		List <Review> reviews=jdbc.query(sql,new ReviewRowMapper());
+		
+		List <Review> reviews_s=jdbc.query(sql,new ReviewRowMapper());
+		List<Review> reviews=new ArrayList<Review>();
+		for(Review r:reviews_s)
+		{
+			int u_id=r.getUser_id();	
+			User u=user_jdbc.getUser(u_id);
+			r.setUser(u);
+			reviews.add(r);
+		}
+		
 		return reviews;
 	}
 

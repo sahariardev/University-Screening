@@ -1,0 +1,51 @@
+<html>
+<head th:replace="layouts/header::header">
+
+</head>
+<body>
+
+	<div th:replace="layouts/menu::menu">Menu Didnt Load</div>
+	<div class="pusher">
+		<div th:replace="layouts/nav::nav"></div>
+
+              
+              <div class="ui container form-title">
+              Universities
+              </div>
+              <div class="ui container admin-form">
+              
+           
+                
+
+                     <div class="row" >
+                     	<div th:replace="layouts/adminmenu::adminmenu">
+                     	</div>
+                     	
+                     	<div class="col-md-9" style="overflow-y: auto;max-width:600px;margin-left: 10px;margin-right: 10px;">
+					<div th:each="u:${universities}" class="row rf-block-container">
+						<div class="rf-block" th:text="${u.getName()}"></div>
+
+						<div class="rf-block" > <a th:href="${'/uni/'+u.getId()}">View</a></div>
+
+						<div class="rf-block" th:data="${u.getId()}">Delete</div>
+						<div class="rf-block" th:data="${u.getId()}">Edit</div>
+					</div>
+
+
+				</div>
+                     </div>
+
+
+               </div>
+               
+             
+              
+              
+              
+              
+          
+
+		<div th:replace="layouts/footer::footer"></div>
+	</div>
+</body>
+</html>

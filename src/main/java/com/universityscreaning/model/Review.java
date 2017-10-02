@@ -7,6 +7,14 @@ public class Review {
 	private int uni_id;
 	private String body;
 	private int points;
+	private User user;
+	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public int getId() {
 		return id;
 	}
@@ -37,10 +45,13 @@ public class Review {
 	public void setPoints(int points) {
 		this.points = points;
 	}
+
+	
+	
 	@Override
 	public String toString() {
 		return "Review [id=" + id + ", user_id=" + user_id + ", uni_id=" + uni_id + ", body=" + body + ", points="
-				+ points + "]";
+				+ points + ", user=" + user + "]";
 	}
 	public Review(int id, int user_id, int uni_id, String body, int points) {
 		
