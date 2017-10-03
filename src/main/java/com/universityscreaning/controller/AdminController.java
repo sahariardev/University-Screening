@@ -87,7 +87,7 @@ public class AdminController {
 	public String showAlluni(Model model)
 	{
 		model.addAttribute("universities",ujdbc.getAll());
-		return "admin/allUni";
+		return "Admin/allUni";
 	}
 	
 	@RequestMapping(value="/allnews")
@@ -95,7 +95,7 @@ public class AdminController {
 	{
 		
 	    model.addAttribute("Newses",njdbc.getAllNews());
-		return "admin/allnews";
+		return "Admin/allnews";
 	}
 
 }
