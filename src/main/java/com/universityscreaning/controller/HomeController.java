@@ -56,7 +56,7 @@ public class HomeController {
 	{
 		
 	
-		return "register";
+		return "register2";
 	}
 	
 }
