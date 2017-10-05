@@ -1,55 +1,43 @@
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head th:replace="layouts/header::header"></head>
-
 <body>
-
-  <div th:replace="layouts/menu::menu">Menu Didnt Load</div>
+	
+  	<div th:replace="layouts/menu::menu">Menu Didnt Load</div>
 	<div class="pusher">
 		<div th:replace="layouts/nav::nav"></div>
 
-		<div id="signup">   
+		
+			<div style="max-width:400px;margin:auto;margin-top:150px">  
         	<h1>Sign Up for Free</h1>
-          
-			<form action="" method="post" autocomplete="off">
-
-			<div class="top-row">
-				<div class="field-wrap">
-				<input type="text" required autocomplete="off" name='firstname' placeholder="First Name"/>
+			<form action="/register" method="post">
+				<div class="form-group">
+					<input type="text" class="form-control" name='firstname' placeholder="First Name"/>
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" name='lastname' placeholder="Last Name"/>
+				</div>
+				<div class="form-group">
+					<input type="email" class="form-control" autocomplete="off" name='email' placeholder="Email Address*"/>
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" name='password' placeholder="Password*"/>
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" autocomplete="off" name="password-repeat" placeholder="Repeat Password*"/>
 				</div>
 
-				<div class="field-wrap">
-				<input type="text"required autocomplete="off" name='lastname' placeholder="Last Name"/>
-				</div>
-			</div>
-
-			<div class="field-wrap">
-				<input type="email"required autocomplete="off" name='email' placeholder="Email Address*"/>
-			</div>
-
-			<div class="field-wrap">
-				<input type="password"required autocomplete="off" name='password' placeholder="Password*"/>
-			</div>
-
-			<div class="field-wrap">
-				<input type="password-repeat" required autocomplete="off" name="password-repeat" placeholder="Repeat Password*"/>
-			</div>
-
-			<button type="submit" class="button button-block" name="register" />Register</button>
-
+				<button type="submit" class="btn btn-default" name="register">Register</button>
 			</form>
-
-        </div>
-
-
-
+			</div>  
+		
 
               <!-- Content goes here  --> 
 
 		<div th:replace="layouts/footer::footer"></div>
 	</div>
-
+	
 </body>
-
+    
 
 	
 </html>
