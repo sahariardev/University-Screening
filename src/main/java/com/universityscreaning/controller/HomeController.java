@@ -51,4 +51,12 @@ public class HomeController {
 		return "login";
 	}
 	
+	@RequestMapping(value="/regsiter" , method=RequestMethod.GET)
+	public String showregister()
+	{
+		
+	
+		return "register";
+	}
+	
 }
