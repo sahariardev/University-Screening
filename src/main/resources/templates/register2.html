@@ -7,7 +7,38 @@
 	<div class="pusher">
 		<div th:replace="layouts/nav::nav"></div>
 
+		<div id="signup">   
+        	<h1>Sign Up for Free</h1>
+          
+			<form action="" method="post" autocomplete="off">
 
+			<div class="top-row">
+				<div class="field-wrap">
+				<input type="text" required autocomplete="off" name='firstname' placeholder="First Name"/>
+				</div>
+
+				<div class="field-wrap">
+				<input type="text"required autocomplete="off" name='lastname' placeholder="Last Name"/>
+				</div>
+			</div>
+
+			<div class="field-wrap">
+				<input type="email"required autocomplete="off" name='email' placeholder="Email Address*"/>
+			</div>
+
+			<div class="field-wrap">
+				<input type="password"required autocomplete="off" name='password' placeholder="Password*"/>
+			</div>
+
+			<div class="field-wrap">
+				<input type="password-repeat" required autocomplete="off" name="password-repeat" placeholder="Repeat Password*"/>
+			</div>
+
+			<button type="submit" class="button button-block" name="register" />Register</button>
+
+			</form>
+
+        </div>
 
 
 
