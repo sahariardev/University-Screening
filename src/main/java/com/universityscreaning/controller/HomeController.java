@@ -1,16 +1,14 @@
 package com.universityscreaning.controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.springframework.web.context.request.WebRequest;
 
 import com.universityscreaning.DaoImpl.UserDaoImpl;
-import com.universityscreaning.model.User;
 
 @Controller
 public class HomeController {
@@ -19,19 +17,15 @@ public class HomeController {
 	private UserDaoImpl usr;
 	
 	@RequestMapping(value="/" , method=RequestMethod.GET)
-	public String showHome()
+	public String showHome(WebRequest request, Principal p)
 	{
 		
-		 /*
+
 		
-		 List <User> users=usr.getAllUser();
-		for(User user:users)
-		{
-			System.out.println("Here-------- "+user);
-		}
 		
-		System.err.println("-----------------Hello World----------------------");
-		*/
+		
+		
+		System.out.println(p);
 		return "home";
 	}
 	
