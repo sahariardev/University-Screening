@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign-Up/Login Form</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab"><a href="#signup">Sign Up</a></li>
+        <li class="tab active"><a href="#login">Log In</a></li>
+      </ul>
+      
+      <div class="tab-content">
+
+         <div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form action="" method="post" autocomplete="off">
+          
+            <div class="field-wrap">
+            <input type="email" required autocomplete="off" name="email" placeholder="Email"/>
+          </div>
+          
+          <div class="field-wrap">
+            <input type="password" required autocomplete="off" name="password" placeholder="Password"/>
+          </div>
+          
+         
+          
+          <button class="button button-block" name="login" />Log In</button>
+          
+          </form>
+
+        </div>
+          
+        <div id="signup">   
+          <h1>Sign Up for Free</h1>
+          
+          <form action="" method="post" autocomplete="off">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <input type="text" required autocomplete="off" name='firstname' placeholder="First Name"/>
+            </div>
+        
+            <div class="field-wrap">
+              <input type="text"required autocomplete="off" name='lastname' placeholder="Last Name"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <input type="email"required autocomplete="off" name='email' placeholder="Email Address*"/>
+          </div>
+          
+          <div class="field-wrap">
+            <input type="password"required autocomplete="off" name='password' placeholder="Password*"/>
+          </div>
+          
+          <div class="field-wrap">
+            <input type="password-repeat" required autocomplete="off" name="password-repeat" placeholder="Repeat Password*"/>
+          </div>
+
+          <button type="submit" class="button button-block" name="register" />Register</button>
+          
+          </form>
+
+        </div>  
+        
+      </div>
+      
+</div> 
+    <script src='js/jquery-3.2.1.min.js'></script>
+    <script src="js/index.js"></script>
+
+</body>
+</html>
