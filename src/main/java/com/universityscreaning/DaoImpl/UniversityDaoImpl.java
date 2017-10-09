@@ -50,9 +50,11 @@ public class UniversityDaoImpl implements UniversityDao {
 	}
 
 	@Override
-	public void updateUniversity(University university) {
+	public void updateUniversity(University uni) {
 		// TODO Auto-generated method stub
-
+		String sql="update universities (name,address,body,creditfee,Divison) values('"+uni.getName()+"','"+uni.getAddress()+"','"+uni.getBody()+"',"+uni.getFee()+",'"+uni.getDivision()+"') where id ="+uni.getId();
+		System.out.println(sql);
+		jdbc.update(sql);
 	}
 
 	@Override
