@@ -8,16 +8,29 @@
 	<div th:replace="layouts/menu::menu">Menu Didnt Load</div>
 	<div class="pusher">
 		<div th:replace="layouts/nav::nav"></div>
-		 <div> 
-		  <div class="ui modal">
-  <div class="header">Header</div>
-</div>
-		 </div>
-              <div id="map" style="width:100%;height:500px"></div>
-		
+		<div>
+			<div class="ui modal" style="max-height: 355px;">
+				<i class="close icon"></i>
+				<div class="header">What you think about this university</div>
+				<div class="content">
+					<div class="form-group">
+						<label for="comment">Comment:</label>
+						<textarea class="form-control" rows="5" id="comment"></textarea>
+					</div>
+				</div>
+				<div class="actions">
+					<div class="ui black deny button">Cancel</div>
+					<div class="ui positive right labeled icon button">
+						Submit <i class="checkmark icon"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="map" style="width: 100%; height: 500px"></div>
 
-		
-		
+
+
+		<script>
 
 			$(document).ready(function(){
 				var myCenter = new google.maps.LatLng(23.7802, 90.4072);
@@ -38,74 +51,103 @@
 			
 		</script>
 		<div th:text="${uni}" class="ui container">Hey</div>
-        <div class="container"> 
-		<div class="center topmar-100">
-			<h2 class="f1 botmar-50">Brac University</h2>
-			<div class="f5 paragraph">Lorem ipsum dolor sit amet,
-				consectetur adipiscing elit. Ut non justo erat. Etiam sollicit udin
-				id turpis sed interdum. Aenean sodales at sapien in facilisis.
-				Praesent malesuada imperdiet metus quis gravida. Duis augue orci,
-				feugiat at justo a, interdum varius elit. Aliquam sollicitudin massa
-				ligula, vitae aliquet tellus dictum eu. Nulla consectetu r pharetra
-				ullamcorper. Fusce bibendum tincidunt quam, a egestas elit vehicula
-				non. Nulla hendrerit est in cur sus placerat. Mauris aliquet
-				porttitor vehicula.
-			</div>
+		<div class="container">
+			<div class="center topmar-100">
+				<h2 class="f1 botmar-50">Brac University</h2>
+				<div class="f5 paragraph">Lorem ipsum dolor sit amet,
+					consectetur adipiscing elit. Ut non justo erat. Etiam sollicit udin
+					id turpis sed interdum. Aenean sodales at sapien in facilisis.
+					Praesent malesuada imperdiet metus quis gravida. Duis augue orci,
+					feugiat at justo a, interdum varius elit. Aliquam sollicitudin
+					massa ligula, vitae aliquet tellus dictum eu. Nulla consectetu r
+					pharetra ullamcorper. Fusce bibendum tincidunt quam, a egestas elit
+					vehicula non. Nulla hendrerit est in cur sus placerat. Mauris
+					aliquet porttitor vehicula.</div>
 
-				<div>
-					<canvas class="service_canvas" id="rifat6" width="140" height="140">
-						</canvas>
+				<div class="rating-show-circle">
+					<div class="row">
+						<div class="col-md-4">
+
+							<canvas class="service_canvas" id="rifat1" width="140"
+								height="140"></canvas>
+							<div>Campus</div>
+						</div>
+						<div class="col-md-4">
+
+							<canvas class="service_canvas" id="rifat2" width="140"
+								height="140"></canvas>
+							<div>Faculty members</div>
+						</div>
+						<div class="col-md-4">
+
+							<canvas class="service_canvas" id="rifat3" width="140"
+								height="140"></canvas>
+							<div>Student assosiation</div>
+						</div>
+					</div>	
+
 				</div>
 
 			</div>
-		 
-		    <div class="center topmar-100">
-		       <h2 class="f1 botmar-50">Available curriculam</h2>
-		       <div class="f5 paragraph center ">
-		          <div class="single-curriculam"> CSE </div>
-		          <div class="single-curriculam"> BBA </div>
-		          <div class="single-curriculam"> EEE </div>
-		          <div class="single-curriculam"> PHERMACY </div>
-		       </div>
-		    </div> 	
+
+			<div class="center topmar-100">
+				<h2 class="f1 botmar-50">Available curriculam</h2>
+				<div class="f5 paragraph center ">
+					<div class="single-curriculam">CSE</div>
+					<div class="single-curriculam">BBA</div>
+					<div class="single-curriculam">EEE</div>
+					<div class="single-curriculam">PHERMACY</div>
+				</div>
+			</div>
 			<div class="center topmar-100">
 				<a class="ui primary button">Visit official website</a>
+				<a class="ui primary button" id="modal">Write your thoughts</a>
 			</div>
-			<div class="center topmar-100 botmar-50" >
-			 <h2 class="f1 botmar-50">Comments</h2>
-			 <div class="comments-container">
-			    <div class="comment-container">
-			         <div class="comment">
-			         Good University. Have well decorated class rooms. But campus has no field.
-			         </div> 
-			          <div class="comment-by">
-			             Commented by <i>RifatSahariar</i>
-			         </div>
-			    </div>
-			    <div class="comment-container">
-			         <div class="comment">
-			         Good University. Have well decorated class rooms. But campus has no field.
-			         </div> 
-			          <div class="comment-by">
-			             Commented by <i>RifatSahariar</i>
-			         </div>
-			    </div>
-			    <div class="comment-container">
-			         <div class="comment">
-			         Good University. Have well decorated class rooms. But campus has no field.
-			         </div> 
-			          <div class="comment-by">
-			             Commented by <i>RifatSahariar</i>
-			         </div>
-			    </div>
-			     
-			 </div>
+			<div class="center topmar-100 botmar-50">
+				<h2 class="f1 botmar-50">Comments</h2>
+				<div class="comments-container">
+					<div class="comment-container">
+						<div class="comment">Good University. Have well decorated
+							class rooms. But campus has no field.</div>
+						<div class="comment-by">
+							Commented by <i>RifatSahariar</i>
+						</div>
+					</div>
+					<div class="comment-container">
+						<div class="comment">Good University. Have well decorated
+							class rooms. But campus has no field.</div>
+						<div class="comment-by">
+							Commented by <i>RifatSahariar</i>
+						</div>
+					</div>
+					<div class="comment-container">
+						<div class="comment">Good University. Have well decorated
+							class rooms. But campus has no field.</div>
+						<div class="comment-by">
+							Commented by <i>RifatSahariar</i>
+						</div>
+					</div>
+
+				</div>
 			</div>
 
 		</div>
 
-         <script th:src="@{https://maps.googleapis.com/maps/api/js?key=AIzaSyDwgAZ77X8MEEPKd6kAsGridYtSZwBtUcw}"></script>
-		<script th:src="@{}"></script>
+		<script
+			th:src="@{https://maps.googleapis.com/maps/api/js?key=AIzaSyDwgAZ77X8MEEPKd6kAsGridYtSZwBtUcw}"></script>
+		<script th:src="@{/js/circleRate.js}"></script>
+		<script>
+		$("#modal").click(function(){
+			
+			$('.ui.modal')
+			  .modal('show')
+			;
+			
+		});
+    	drawCircle(90,"rifat1");
+    	drawCircle(93,"rifat2");
+    	drawCircle(96,"rifat3");
+        </script>
 		<div th:replace="layouts/footer::footer"></div>
 	</div>
 </body>

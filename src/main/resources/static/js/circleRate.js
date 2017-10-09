@@ -1,9 +1,9 @@
 
 
 	    var speed=25;
-	 	var backgroundClor="#50b7c8";//"#00ccff"
-	    var circleColor="#FFFFFF";//"#FFFFFF"
-	    var textColor="#FFFFFF";
+	 	var backgroundClor="#f4f7f6";//"#00ccff"
+	    var circleColor="#ff6923";//"#FFFFFF"
+	    var textColor="#ff6923";
 	    var starting_value=1;
 	 
 	   function drawCircle(Percentage,canvasId)
