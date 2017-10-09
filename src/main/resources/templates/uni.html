@@ -13,7 +13,30 @@
   <div class="header">Header</div>
 </div>
 		 </div>
+              <div id="map" style="width:100%;height:500px"></div>
+		
 
+		<script th:src="@{https://maps.googleapis.com/maps/api/js?key=AIzaSyDwgAZ77X8MEEPKd6kAsGridYtSZwBtUcw}"></script>
+		<script>
+
+			$(document).ready(function(){
+				var myCenter = new google.maps.LatLng(23.7802, 90.4072);
+				var mapCanvas = document.getElementById("map");
+				var mapOptions = {
+					center : myCenter,
+					zoom : 18
+				};
+				var map = new google.maps.Map(mapCanvas, mapOptions);
+				var marker = new google.maps.Marker({
+					position : myCenter
+				});
+				marker.setMap(map);
+				
+				
+			});
+				
+			
+		</script>
               <div th:text="${uni}" class="ui container">Hey </div>
           
 
