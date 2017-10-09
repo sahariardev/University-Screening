@@ -16,8 +16,8 @@
               <div id="map" style="width:100%;height:500px"></div>
 		
 
-		<script th:src="@{https://maps.googleapis.com/maps/api/js?key=AIzaSyDwgAZ77X8MEEPKd6kAsGridYtSZwBtUcw}"></script>
-		<script>
+		
+		
 
 			$(document).ready(function(){
 				var myCenter = new google.maps.LatLng(23.7802, 90.4072);
@@ -37,9 +37,75 @@
 				
 			
 		</script>
-              <div th:text="${uni}" class="ui container">Hey </div>
-          
+		<div th:text="${uni}" class="ui container">Hey</div>
+        <div class="container"> 
+		<div class="center topmar-100">
+			<h2 class="f1 botmar-50">Brac University</h2>
+			<div class="f5 paragraph">Lorem ipsum dolor sit amet,
+				consectetur adipiscing elit. Ut non justo erat. Etiam sollicit udin
+				id turpis sed interdum. Aenean sodales at sapien in facilisis.
+				Praesent malesuada imperdiet metus quis gravida. Duis augue orci,
+				feugiat at justo a, interdum varius elit. Aliquam sollicitudin massa
+				ligula, vitae aliquet tellus dictum eu. Nulla consectetu r pharetra
+				ullamcorper. Fusce bibendum tincidunt quam, a egestas elit vehicula
+				non. Nulla hendrerit est in cur sus placerat. Mauris aliquet
+				porttitor vehicula.
+			</div>
 
+				<div>
+					<canvas class="service_canvas" id="rifat6" width="140" height="140">
+						</canvas>
+				</div>
+
+			</div>
+		 
+		    <div class="center topmar-100">
+		       <h2 class="f1 botmar-50">Available curriculam</h2>
+		       <div class="f5 paragraph center ">
+		          <div class="single-curriculam"> CSE </div>
+		          <div class="single-curriculam"> BBA </div>
+		          <div class="single-curriculam"> EEE </div>
+		          <div class="single-curriculam"> PHERMACY </div>
+		       </div>
+		    </div> 	
+			<div class="center topmar-100">
+				<a class="ui primary button">Visit official website</a>
+			</div>
+			<div class="center topmar-100 botmar-50" >
+			 <h2 class="f1 botmar-50">Comments</h2>
+			 <div class="comments-container">
+			    <div class="comment-container">
+			         <div class="comment">
+			         Good University. Have well decorated class rooms. But campus has no field.
+			         </div> 
+			          <div class="comment-by">
+			             Commented by <i>RifatSahariar</i>
+			         </div>
+			    </div>
+			    <div class="comment-container">
+			         <div class="comment">
+			         Good University. Have well decorated class rooms. But campus has no field.
+			         </div> 
+			          <div class="comment-by">
+			             Commented by <i>RifatSahariar</i>
+			         </div>
+			    </div>
+			    <div class="comment-container">
+			         <div class="comment">
+			         Good University. Have well decorated class rooms. But campus has no field.
+			         </div> 
+			          <div class="comment-by">
+			             Commented by <i>RifatSahariar</i>
+			         </div>
+			    </div>
+			     
+			 </div>
+			</div>
+
+		</div>
+
+         <script th:src="@{https://maps.googleapis.com/maps/api/js?key=AIzaSyDwgAZ77X8MEEPKd6kAsGridYtSZwBtUcw}"></script>
+		<script th:src="@{}"></script>
 		<div th:replace="layouts/footer::footer"></div>
 	</div>
 </body>
