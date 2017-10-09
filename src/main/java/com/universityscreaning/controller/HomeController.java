@@ -8,13 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.request.WebRequest;
 
+import com.universityscreaning.DaoImpl.UniversityDaoImpl;
 import com.universityscreaning.DaoImpl.UserDaoImpl;
+import com.universityscreaning.model.University;
 
 @Controller
 public class HomeController {
 
 	@Autowired
 	private UserDaoImpl usr;
+	@Autowired
+	private UniversityDaoImpl uni; 
 	
 	@RequestMapping(value="/" , method=RequestMethod.GET)
 	public String showHome(WebRequest request, Principal p)
@@ -58,5 +62,19 @@ public class HomeController {
 	
 		return "register2";
 	}
+	@RequestMapping(value="/test" , method=RequestMethod.GET)
+	public String test()
+	{
+		
+	   
+		 University university=uni.getUniversity(1);
+		 
+		 university.setAddress("Address testing ....");
+		 
+		 uni.updateUniversity(university);
+		 
+		return "home";
+	}
+	
 	
 }
