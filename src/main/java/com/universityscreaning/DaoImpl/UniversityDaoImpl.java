@@ -60,9 +60,11 @@ public class UniversityDaoImpl implements UniversityDao {
 	}
 
 	@Override
-	public void deleteUniversity(University university) {
+	public void deleteUniversity(int id) {
 		// TODO Auto-generated method stub
-
+		String sql = "delete from universities where id="+id;
+		System.out.println(sql);
+		jdbc.update(sql);
 	}
 
 	@Override

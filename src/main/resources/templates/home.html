@@ -6,7 +6,7 @@
 	<div th:replace="layouts/menu::menu">Menu Didnt Load</div>
 	<div class="pusher">
 		<div th:replace="layouts/nav::nav"></div>
-		<script src="/js/typed.min.js"></script>
+		<script th:src="@{/js/typed.min.js}"></script>
 		<div class="home-back">
 			<div class="text-with-background"><span class="anmtxt"></span><span class="blink">|</span></div>
 			<script>

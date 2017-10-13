@@ -1,0 +1,27 @@
+ <div th:fragment="footer">
+ <script>
+ 
+ var issearchvisible=false;
+ $(".show-search").click(function(){
+	 $(".rf-search").slideDown();
+	 issearchvisible=true;
+ });
+ $(".hide-search").click(function(){
+	if(issearchvisible)
+		{
+		 $(".rf-search").slideUp();
+		  issearchvisible=false;
+		}
+	 
+ });
+ 
+ $(".menu-call-btn").click(function(){
+	 
+	 $('.ui.sidebar')
+	  .sidebar('toggle')
+	;
+ });
+ 
+ </script>
+<script  th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.js}"></script>
+ </div>

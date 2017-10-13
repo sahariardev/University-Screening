@@ -3,6 +3,7 @@ package com.universityscreaning.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.request.WebRequest;
@@ -97,5 +98,42 @@ public class AdminController {
 	    model.addAttribute("Newses",njdbc.getAllNews());
 		return "Admin/allnews";
 	}
-
+	
+	@RequestMapping(value="/{uni}/edit")
+	public String universityEdit(Model model, @PathVariable("uni") int  id) {
+	University uni = new University();
+	uni = ujdbc.getUniversity(id);
+	model.addAttribute("university",uni);
+	return "Admin/uniedit";
+	}
+	
+	@RequestMapping(value="/{uni}/edit" , method=RequestMethod.POST)
+	public String updateUniversity(WebRequest request, Model model) throws FormDataNotFoundException
+	{
+		
+     
+		University uni=new University();
+		uni.setName(request.getParameter("name"));
+		uni.setBody(request.getParameter("body"));
+		uni.setAddress(request.getParameter("address"));
+		uni.setDivision(request.getParameter("divison"));
+		uni.setFee(Integer.parseInt(request.getParameter("fees")));
+		
+		if(uni.getName().length()==0|| uni.getAddress().length()==0 || uni.getBody().length()==0|| uni.getDivision().length()==0|| uni.getFee()== 0)
+		{
+			throw new FormDataNotFoundException();
+		}
+		
+		ujdbc.updateUniversity(uni);
+		
+	    model.addAttribute("message","Sucessfully Updated");
+	    model.addAttribute("university",uni);
+		return "Admin/uniedit";
+	}
+	@RequestMapping(value="/{uni}/delete")
+	public String universityDelete(Model model, @PathVariable("uni") int  id) {
+	ujdbc.deleteUniversity(id);
+	return "Admin/msg";
+	}
+	
 }
