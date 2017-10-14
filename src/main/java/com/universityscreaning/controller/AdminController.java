@@ -106,6 +106,41 @@ public class AdminController {
 	model.addAttribute("university",uni);
 	return "Admin/uniedit";
 	}
+	@RequestMapping(value="/news/{news}/edit")
+	public String newsEdit(Model model, @PathVariable("news") int  id) {
+	
+		
+	
+		News news=new News();
+		
+		news=njdbc.findNewsById(id);
+		
+	model.addAttribute("news",news);
+	return "Admin/newsedit";
+	}
+	
+	@RequestMapping(value="/news/{news}/edit" , method=RequestMethod.POST)
+	public String updateEdit(WebRequest request,Model model, @PathVariable("news") int  id) {
+
+		
+		
+		   News n=njdbc.findNewsById(id);
+		   
+		   n.setText(request.getParameter("body"));
+		   n.setTitle(request.getParameter("name"));
+		   njdbc.updateNews(n);
+		  
+		   
+		   
+		   
+			model.addAttribute("message","Successfully added one");
+            model.addAttribute("news",n);
+	
+            
+            return "Admin/newsedit";
+	
+	
+	}
 	
 	@RequestMapping(value="/{uni}/edit" , method=RequestMethod.POST)
 	public String updateUniversity(WebRequest request, Model model) throws FormDataNotFoundException

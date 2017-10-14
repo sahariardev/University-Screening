@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.universityscreaning.Dao.NewsDao;
+import com.universityscreaning.ResultSetExtractors.NewsResultSetExtractor;
 import com.universityscreaning.RowMappers.NewsRowMapper;
 import com.universityscreaning.model.News;
 
@@ -37,14 +38,20 @@ public class NewsDaoImpl implements NewsDao {
 
 	@Override
 	public void updateNews(News n) {
-		// TODO Auto-generated method stub
-
+		String sql="update news set title='"+n.getTitle()+"',body='"+n.getText()+"' where id ="+n.getId();
+	    System.out.println(sql);
+	    jdbc.update(sql);     
+           
 	}
 
 	@Override
 	public News findNewsById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		String sql=" Select *  from news where id ="+id+";";
+		News news=jdbc.query(sql, new NewsResultSetExtractor());
+		
+		
+		return news;
 	}
 
 	@Override
