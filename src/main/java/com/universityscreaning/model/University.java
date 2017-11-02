@@ -41,6 +41,10 @@ public class University {
 	public String getAddress() {
 		return address;
 	}
+	public String getUrl()
+	{
+		return "/uni/"+id;
+	}
 	public void setAddress(String address) {
 		this.address = address;
 	}

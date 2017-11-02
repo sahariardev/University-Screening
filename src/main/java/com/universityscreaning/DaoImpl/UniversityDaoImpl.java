@@ -73,11 +73,14 @@ public class UniversityDaoImpl implements UniversityDao {
 		List<University> universities=jdbc.query(sql,new UniversityRowMapper());
 		return universities;
 	}
+	
 
 	@Override
-	public List<University> findUni(String name, String division, String curriculam, int max, int min) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<University> findUni(String name, String divison, int max, int min) {
+		String sql="Select * from universities where name LIKE '%"+name+"%' and Divison LIKE '%"+divison+"%' and creditfee BETWEEN "+min+" AND "+max;
+		System.out.println(sql);
+		List<University> universities=jdbc.query(sql,new UniversityRowMapper());
+		return universities;
 	}
 
 }

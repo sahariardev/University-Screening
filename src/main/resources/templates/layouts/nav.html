@@ -2,18 +2,18 @@
 
 	<div class="rf-search">
 
-		<form method="get">
+		<form method="get" action="/uni/search">
 
 			<div class="ui action input">
-				<input placeholder="Search..." type="text" />
-				<div type="submit" class="ui button">Search</div>
+				<input placeholder="Search..." type="text" name="uniname" />
+				<input  type="submit" class="ui button" value="Search" />
 			</div>
 			<div>
 				<div class="topmar-10">Division</div>
-				<select class="ui compact selection dropdown">
+				<select class="ui compact selection dropdown" name="division">
 					<option value="all">All</option>
-					<option selected="" value="articles">Dhaka</option>
-					<option value="products">Chittagonj</option>
+					<option selected="" value="dhaka">Dhaka</option>
+					<option value="chittagong">Chittagong</option>
 				</select>
 
 				
@@ -26,7 +26,7 @@
 				</div>
 			</div>
 
-
+             
 		</form>
 		<div class="hide-search botmar-10">
 			<i>Hide Search Option</i>

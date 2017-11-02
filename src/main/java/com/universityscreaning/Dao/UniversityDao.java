@@ -12,7 +12,7 @@ public interface UniversityDao {
 	public void updateUniversity(University university);
 	public void deleteUniversity(int id);
     public List<University> getAll();
-    public List<University> findUni(String name,String division,String curriculam,int max,int min);
+    public List<University> findUni(String name,String division,int max,int min);
     
     
 

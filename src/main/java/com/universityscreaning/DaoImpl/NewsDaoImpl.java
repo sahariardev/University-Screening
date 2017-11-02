@@ -32,7 +32,9 @@ public class NewsDaoImpl implements NewsDao {
 
 	@Override
 	public void deleteNews(News n) {
-		// TODO Auto-generated method stub
+		String sql="Delete from news where id ="+n.getId();
+		System.out.println(sql);
+		jdbc.update(sql);
 
 	}
 
