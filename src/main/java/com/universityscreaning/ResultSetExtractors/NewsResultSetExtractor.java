@@ -25,7 +25,6 @@ public class NewsResultSetExtractor implements ResultSetExtractor<News> {
 		news.setText(res.getString("body"));
 		news.setTitle(res.getString("title"));
 		news.setUni_id(res.getInt("uni_id"));
-		System.out.println("Here I am ");
 		
 		}
 		

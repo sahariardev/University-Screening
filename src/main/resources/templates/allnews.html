@@ -1,0 +1,53 @@
+<html>
+	<head th:replace="layouts/header::header"></head>
+
+<body>
+
+  <div th:replace="layouts/menu::menu">Menu Didnt Load</div>
+	<div class="pusher">
+		<div th:replace="layouts/nav::nav"></div>
+
+
+
+
+
+
+              <!-- Content goes here  --> 
+              <div class="container center  topmar-100">
+              <h2>All newses</h2>
+              <div th:each="news :${newses}" style="display:inline-block;margin:15px;">
+           
+               <div class="ui card"  >
+						<div class="content" >
+							<div class="header" th:text="${news.getTitle()}">BRAC University</div>
+						</div>
+						<div class="content" style="height:200px;overflow:hidden;">
+							<h4 class="ui sub header">Description</h4>
+							<div class="ui small feed">
+								<div class="card-text" th:text="${news.getText()}">Lorem ipsum dolor sit amet,
+									consectetur adipiscing elit. Ut non justo erat. Etiam
+									sollicitudin id turpis seLorem ipsum dolor sit amet,
+									consectetur adipiscing elit. Ut non justo erat. Etiam
+									sollicitudin id turpis se</div>
+
+
+							</div>
+						</div>
+						<div class="extra content">
+							<a class="ui button" th:href="${news.getUrl()}">View</a>
+						</div>
+					</div>
+              </div>
+                
+                 
+              </div>
+                             
+
+		<div th:replace="layouts/footer::footer"></div>
+	</div>
+
+</body>
+
+
+	
+</html>

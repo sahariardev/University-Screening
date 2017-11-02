@@ -5,7 +5,14 @@ public class News {
 	private int id;
 	private int uni_id;
 	private String title;
+	private String date;
 	
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -27,6 +34,10 @@ public class News {
 	}
 	public String getText() {
 		return text;
+	}
+	public String getUrl()
+	{
+		return "/news/"+id;
 	}
 	public void setText(String text) {
 		this.text = text;

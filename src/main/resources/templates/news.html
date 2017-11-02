@@ -1,0 +1,31 @@
+<html>
+	<head th:replace="layouts/header::header"></head>
+
+<body>
+
+  <div th:replace="layouts/menu::menu">Menu Didnt Load</div>
+	<div class="pusher">
+		<div th:replace="layouts/nav::nav"></div>
+
+
+
+
+        <div class="container topmar-100 center">
+          <h2 th:text="${news.getTitle()}" class="f1 botmar-50 "></h2>
+         
+         <div class="f5 paragraph" th:text="${news.getText()}">
+         </div>
+         
+         </div>
+
+         <div style="margin-bottom:100px;">
+         </div>
+
+		<div th:replace="layouts/footer::footer"></div>
+	</div>
+
+</body>
+
+
+	
+</html>
