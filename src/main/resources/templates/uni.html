@@ -28,12 +28,19 @@
 		</div>
 		<div id="map" style="width: 100%; height: 500px"></div>
 
+        
 
-
-		<script>
-
+		<script th:inline="javascript">
+		/*<![CDATA[*/
+			
+			
+			var val1=[[${uni.getScores()[0]}]];
+			var val2=[[${uni.getScores()[1]}]];
+			var val3=[[${uni.getScores()[2]}]];
+			var lat=[[${uni.getlat()}]];
+		    var longit=[[${uni.getlong()}]];
 			$(document).ready(function(){
-				var myCenter = new google.maps.LatLng(23.7802, 90.4072);
+				var myCenter = new google.maps.LatLng(lat, longit);
 				var mapCanvas = document.getElementById("map");
 				var mapOptions = {
 					center : myCenter,
@@ -48,13 +55,13 @@
 				
 			});
 				
-			
+			/*]]>*/
 		</script>
-		<div th:text="${uni}" class="ui container">Hey</div>
+		
 		<div class="container">
 			<div class="center topmar-100">
-				<h2 class="f1 botmar-50">Brac University</h2>
-				<div class="f5 paragraph">Lorem ipsum dolor sit amet,
+				<h2 class="f1 botmar-50" th:text="${uni.getName()}">Brac University</h2>
+				<div class="f5 paragraph" th:text="${uni.getBody()}">Lorem ipsum dolor sit amet,
 					consectetur adipiscing elit. Ut non justo erat. Etiam sollicit udin
 					id turpis sed interdum. Aenean sodales at sapien in facilisis.
 					Praesent malesuada imperdiet metus quis gravida. Duis augue orci,
@@ -93,18 +100,19 @@
 			<div class="center topmar-100">
 				<h2 class="f1 botmar-50">Available curriculam</h2>
 				<div class="f5 paragraph center ">
-					<div class="single-curriculam">CSE</div>
-					<div class="single-curriculam">BBA</div>
-					<div class="single-curriculam">EEE</div>
-					<div class="single-curriculam">PHERMACY</div>
+					<div class="single-curriculam" th:each="sub:${uni.getSubjects()}" th:text="${sub}"></div>
+				
 				</div>
 			</div>
 			<div class="center topmar-100">
-				<a class="ui primary button">Visit official website</a>
-				<a class="ui primary button" id="modal">Write your thoughts</a>
+				<a class="ui primary button" th:href="${uni.uniUrl()}">Visit official website</a>
+				<a class="ui primary button" id="modal" style="display:none;">Write your thoughts</a>
 			</div>
-			<div class="center topmar-100 botmar-50">
-				<h2 class="f1 botmar-50">Comments</h2>
+			<div class="topmar-100">
+			</div>
+			
+			<div class="center topmar-100 botmar-50" style="display:none;">
+				<h2 class="f1 botmar-50" >Comments</h2>
 				<div class="comments-container">
 					<div class="comment-container">
 						<div class="comment">Good University. Have well decorated
@@ -144,9 +152,9 @@
 			;
 			
 		});
-    	drawCircle(90,"rifat1");
-    	drawCircle(93,"rifat2");
-    	drawCircle(96,"rifat3");
+    	drawCircle(val1,"rifat1");
+    	drawCircle(val2,"rifat2");
+    	drawCircle(val3,"rifat3");
         </script>
 		<div th:replace="layouts/footer::footer"></div>
 	</div>

@@ -32,6 +32,7 @@ public class UniversityResultSetExtractor implements ResultSetExtractor<Universi
 			uni.setBody(res.getString("body"));
 			uni.setFee(res.getInt("creditfee"));
 			uni.setDivision(res.getString("Divison"));
+			uni.setOtherinfo(res.getString("Otherinfo"));
 			uni.setFilled(true);
 			
 		}

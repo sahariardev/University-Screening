@@ -44,6 +44,7 @@ public class AdminController {
 		uni.setAddress(request.getParameter("address"));
 		uni.setDivision(request.getParameter("divison"));
 		uni.setFee(Integer.parseInt(request.getParameter("fees")));
+		uni.setOtherinfo(request.getParameter("otherinfo"));
 		
 		if(uni.getName().length()==0|| uni.getAddress().length()==0 || uni.getBody().length()==0|| uni.getDivision().length()==0|| uni.getFee()== 0)
 		{
@@ -143,16 +144,18 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="/{uni}/edit" , method=RequestMethod.POST)
-	public String updateUniversity(WebRequest request, Model model) throws FormDataNotFoundException
+	public String updateUniversity(@PathVariable("uni") int id ,WebRequest request, Model model) throws FormDataNotFoundException
 	{
 		
      
 		University uni=new University();
+		uni.setId(id);
 		uni.setName(request.getParameter("name"));
 		uni.setBody(request.getParameter("body"));
 		uni.setAddress(request.getParameter("address"));
 		uni.setDivision(request.getParameter("divison"));
 		uni.setFee(Integer.parseInt(request.getParameter("fees")));
+		uni.setOtherinfo(request.getParameter("otherinfo"));
 		
 		if(uni.getName().length()==0|| uni.getAddress().length()==0 || uni.getBody().length()==0|| uni.getDivision().length()==0|| uni.getFee()== 0)
 		{

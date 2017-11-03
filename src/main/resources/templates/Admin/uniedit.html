@@ -36,6 +36,10 @@
 								<textarea class="form-control" name="body" rows="5" id="comment" th:text="${university.getBody()}"></textarea>
 							</div>
 							<div class="form-group">
+								<label for="comment">Other info:</label>
+								<textarea class="form-control" name="otherinfo" rows="5" id="otherinfo" th:text="${university.getOtherinfo()}" ></textarea>
+							</div>
+							<div class="form-group">
 								<label for="usr">Division:</label> <input type="text"
 									class="form-control"  name="divison" th:value="${university.getDivision()}"/>
 							</div>

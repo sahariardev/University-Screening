@@ -20,6 +20,7 @@ public class UniversityRowMapper implements RowMapper<University> {
 		uni.setBody(res.getString("body"));
 		uni.setFee(res.getInt("creditfee"));
 		uni.setDivision(res.getString("Divison"));
+		uni.setOtherinfo(res.getString("Otherinfo"));
 		
 		return uni;
 	}

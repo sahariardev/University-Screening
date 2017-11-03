@@ -43,7 +43,7 @@ public class UniversityDaoImpl implements UniversityDao {
 
 	@Override
 	public void createUniversity(University uni) {
-		String sql="insert into universities (name,address,body,creditfee,Divison) values('"+uni.getName()+"','"+uni.getAddress()+"','"+uni.getBody()+"',"+uni.getFee()+",'"+uni.getDivision()+"');";
+		String sql="insert into universities (name,address,body,creditfee,Divison,Otherinfo) values('"+uni.getName()+"','"+uni.getAddress()+"','"+uni.getBody()+"',"+uni.getFee()+",'"+uni.getDivision()+"','"+uni.getOtherinfo()+"');";
 		System.out.println(sql);
 		jdbc.update(sql);
 
@@ -53,7 +53,7 @@ public class UniversityDaoImpl implements UniversityDao {
 	public void updateUniversity(University uni) {
 		// TODO Auto-generated method stub
 
-		String sql="update universities set name='"+uni.getName()+"',address='"+uni.getAddress()+"',body='"+uni.getBody()+"',creditfee='"+uni.getFee()+"',Divison='"+uni.getDivision()+"' where id ="+uni.getId();
+		String sql="update universities set name='"+uni.getName()+"',address='"+uni.getAddress()+"',body='"+uni.getBody()+"',Otherinfo='"+uni.getOtherinfo()+"',creditfee='"+uni.getFee()+"',Divison='"+uni.getDivision()+"' where id ="+uni.getId();
 
 		System.out.println(sql);
 		jdbc.update(sql);
