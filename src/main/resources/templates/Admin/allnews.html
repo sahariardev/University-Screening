@@ -27,7 +27,7 @@
 
 						<div class="rf-block" > <a th:href="${'/news/'+n.getId()}">View</a></div>
 
-						<div class="rf-block" th:data="${n.getId()}">Delete</div>
+						<a class="rf-block" th:data="${n.getId()}" th:href="'/universityscreaning/admin2/news/'+${n.getId()}+'/edit'">Edit</a>
 						<div class="rf-block" th:data="${n.getId()}">Edit</div>
 					</div>
 

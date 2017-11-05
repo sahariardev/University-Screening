@@ -37,7 +37,7 @@ public class News {
 	}
 	public String getUrl()
 	{
-		return "/news/"+id;
+		return "/universityscreaning/news/"+id;
 	}
 	public void setText(String text) {
 		this.text = text;

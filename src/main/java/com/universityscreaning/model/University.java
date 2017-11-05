@@ -80,7 +80,7 @@ public class University {
 	}
 	public String getUrl()
 	{
-		return "/uni/"+id;
+		return "/universityscreaning/uni/"+id;
 	}
 	public void setAddress(String address) {
 		this.address = address;

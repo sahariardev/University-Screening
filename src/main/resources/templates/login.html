@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
        <div style="max-width:400px;margin:auto;margin-top:150px">
-		<form method="post" action="/login">
+		<form method="post" th:action="@{/login}">
 			<div class="form-group">
 				<label for="email">Email address:</label> 
 				 <input type="text" class="form-control" name="username" id="email" />
